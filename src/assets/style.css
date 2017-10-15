@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+
+* {
+    box-sizing: border-box;
+}
+
+body, input, button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: #1abc9c;
+}
+
+#app {
+    max-width: 100%;
+    width: 900px;
+    margin: 2em auto;
+    background: white;
+    padding: 1em;
+}
+
+.main h1,
+.main h3 {
+  text-align: center;
+}
+
+.list-item {
+  minHeight: 100;
+  border: solid 1px;
+  padding: 0 1%;
+}
+
+.read-more {
+   background-color: #00FF00;
+   min-height: 300px;
+   max-height: 500px;
+   overflow: auto;
+}
+
+.read-more-container {
+  border: 2px solid;
+  color: black;
+  width: 95%;
+  padding: 0 2%;
+  margin: 0 auto;
+}
+.read-more-container b {
+  text-transform: capitalize;
+}
