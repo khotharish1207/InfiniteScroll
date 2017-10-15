@@ -4,8 +4,7 @@
   "description": "Infinite Scroll list",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "bundle": "webpack -p"
+    "start": "webpack -p && webpack-dev-server"
   },
   "keywords": [
     "infiniteScroll"
