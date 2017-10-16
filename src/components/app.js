@@ -48,10 +48,10 @@ export default class App extends React.Component {
   }
 
   // Add 10 more objects
-  generateDivs () {
+  generateDivs (loadMore) {
     let moreDivs = [];
     let count = this.state.divs.length;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < loadMore; i++) {
       moreDivs.push(
         <ListItem
           keys={++count}
@@ -72,6 +72,7 @@ export default class App extends React.Component {
       <InfiniteScroll
         next={this.generateDivs}
         hasMore={true}
+        loadMore={15}
         height={500}
         loader={<h4>Loading...</h4>}>
         {this.state.divs}

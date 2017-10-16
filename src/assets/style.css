@@ -21,21 +21,19 @@ body {
 }
 
 .main h1,
-.main h3 {
+.main h3,
+.main p {
   text-align: center;
 }
 
 .list-item {
   minHeight: 100;
   border: solid 1px;
-  padding: 0 1%;
 }
 
 .read-more {
-   background-color: #00FF00;
    min-height: 300px;
    max-height: 500px;
-   overflow: auto;
 }
 
 .read-more-container {
@@ -43,8 +41,24 @@ body {
   color: black;
   width: 95%;
   padding: 0 2%;
-  margin: 0 auto;
+  margin: 2px auto;
+  background-color: #00FF00;
 }
+
 .read-more-container b {
   text-transform: capitalize;
+}
+
+.list-item-header {
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  height: 100px;
+  margin: 5px;
+  padding: 0 1%;
+}
+
+.list-item-header-sticky {
+  position: sticky;
+  top: 5px;
 }

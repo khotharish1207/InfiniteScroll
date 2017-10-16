@@ -21,6 +21,7 @@ export default class InfiniteScroll extends Component {
     children: PropTypes.node,
     loader: PropTypes.node.isRequired,
     scrollThreshold: PropTypes.number,
+    loadMore: PropTypes.number,
     endMessage: PropTypes.node,
     style: PropTypes.object,
     height: PropTypes.number,
@@ -29,6 +30,7 @@ export default class InfiniteScroll extends Component {
 
   defaultProps = {
     scrollThreshold: 0.8,
+    loadMore: 10
   }
 
   componentDidMount () {
@@ -56,6 +58,7 @@ export default class InfiniteScroll extends Component {
 
   onScrollListener = (event) => {
     const target = event.target;
+    const { loadMore } = this.props;
     // if user scrolls up, remove action trigger lock
     if (target.scrollTop < this.state.lastScrollTop) {
       this.setState({
@@ -70,7 +73,7 @@ export default class InfiniteScroll extends Component {
     if (this.state.actionTriggered) return;
     // call the `next` function in the props to trigger the next data fetch
     if (atBottom && this.props.hasMore) {
-      this.props.next();
+      this.props.next(loadMore);
       this.setState({
         actionTriggered: true,
         showLoader: true

@@ -34,25 +34,25 @@ export default class ListItem extends Component {
   render() {
     const { keys = 0, background = '#00FF00' } = this.props;
     const { readMore } = this.state;
-    console.log('readMore', readMore);
-    return(
+    const isEven = keys%2 == 0; // If even the height of list read more will be more that view port
 
+    return(
       <div
         key={keys}
         className={'list-item'}
         style={{ background }}
       >
-        <div style={{height: 100}}>
+        <div className={ isEven ? 'list-item-header list-item-header-sticky' : 'list-item-header' }>
           <h3>{`List Item ${keys}`}</h3>
           <button onClick={this.readMore}>{ readMore ? `Read Less` : `Read More`}</button>
         </div>
         {
           readMore &&
           (<div className={'read-more'}>
-            {'Read More container' }
+            <p>{'Read More container' }</p>
             <div
               className={'read-more-container'}
-              style={{ height: keys%2 == 0 ? 600 : 300 }} // to keep dynamic height
+              style={{ height: isEven ? 600 : 300 }} // to keep dynamic height
             >
               {this.getDetails()}
             </div>
