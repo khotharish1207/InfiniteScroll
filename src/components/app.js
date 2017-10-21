@@ -3,38 +3,47 @@ import InfiniteScroll from './infiniteScroll';
 import ListItem from './listItem';
 import "../assets/style.css";
 
+const InfiniteScrollHeight = 500;
 const initialList = [
   <ListItem
     keys={1}
     background={'#9bc95b'}
+    height={InfiniteScrollHeight}
   />,
   <ListItem
     keys={2}
     background={'#ffd47b'}
+    height={InfiniteScrollHeight}
   />,
   <ListItem
     keys={3}
     background={'#95a9d6'}
+    height={InfiniteScrollHeight}
   />,
   <ListItem
     keys={4}
     background={'#ffa8e1'}
+    height={InfiniteScrollHeight}
   />,
   <ListItem
     keys={5}
     background={'#9bc95b'}
+    height={InfiniteScrollHeight}
   />,
   <ListItem
     keys={6}
     background={'#ffd47b'}
+    height={InfiniteScrollHeight}
   />,
   <ListItem
     keys={7}
     background={'#95a9d6'}
+    height={InfiniteScrollHeight}
   />,
   <ListItem
     keys={8}
     background={'#ffa8e1'}
+    height={InfiniteScrollHeight}
   />
 ];
 
@@ -56,6 +65,7 @@ export default class App extends React.Component {
         <ListItem
           keys={++count}
           background={colors[i % 4]}
+          height={InfiniteScrollHeight}
         />
       );
     }
@@ -73,7 +83,7 @@ export default class App extends React.Component {
         next={this.generateDivs}
         hasMore={true}
         loadMore={15}
-        height={500}
+        height={InfiniteScrollHeight}
         loader={<h4>Loading...</h4>}>
         {this.state.divs}
       </InfiniteScroll>

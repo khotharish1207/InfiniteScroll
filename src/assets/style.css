@@ -31,11 +31,6 @@ body {
   border: solid 1px;
 }
 
-.read-more {
-   min-height: 300px;
-   max-height: 500px;
-}
-
 .read-more-container {
   border: 2px solid;
   color: black;
